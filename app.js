@@ -5,3 +5,4 @@ work in progress
 >>>>>>> Stashed changes
 new feature wip
 function payment() {}
+function fixLogin() {}
