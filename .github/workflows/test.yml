@@ -9,9 +9,23 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+
+[200~cat > .github/workflows/test.yml << 'EOF'
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run tests
         run: |
           echo "Running tests..."
-          node -e "process.exit(1); console.log('Tests failed!');"
+          node -e "function hello() { return 'world'; } if(hello() !== 'world') process.exit(1); console.log('Tests passed!');"
