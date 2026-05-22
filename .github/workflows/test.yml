@@ -14,4 +14,4 @@ jobs:
       - name: Run tests
         run: |
           echo "Running tests..."
-          node -e "function hello() { return 'world'; } if(hello() !== 'world') process.exit(1); console.log('Tests passed!');"
+          node -e "process.exit(1); console.log('Tests failed!');"
